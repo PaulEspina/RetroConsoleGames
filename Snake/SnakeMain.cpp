@@ -15,6 +15,7 @@ private:
 		SnakeSegment()
 		{
 			child = NULL;
+			vel = CGE::Vec2(0, 0);
 			pos = CGE::Vec2(0, 0);
 			segment = CGE::Character("X", pos);
 		}
