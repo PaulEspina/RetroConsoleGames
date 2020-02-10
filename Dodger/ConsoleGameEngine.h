@@ -9,6 +9,7 @@
 
 #include <Windows.h>
 #include <iostream>
+#include <string>
 
 namespace CGE
 {
@@ -98,14 +99,14 @@ namespace CGE
 	public:
 		Console()
 		{
-			wchar_t clear_char = L' ';
-			std::wstring title = L"ConsoleGameEngine";
-			int width = 120, height = 30;
-			wchar_t* screen = NULL;
-			HANDLE console = NULL;
-			DWORD bytes = 0;
+			clear_char = L' ';
+			title = "ConsoleGameEngine";
+			width = 120, height = 30;
+			screen = NULL;
+			handle = NULL;
+			bytes = 0;
 		}
-		Console(int width, int height, std::wstring title)
+		Console(int width, int height, std::string title)
 			:
 			Console()
 		{
@@ -115,7 +116,7 @@ namespace CGE
 		{
 			delete[] screen;
 		}*/
-		bool Create(int width, int height, std::wstring title)
+		bool Create(int width, int height, std::string title)
 		{
 			this->width = width;
 			this->height = height;
@@ -128,7 +129,7 @@ namespace CGE
 				std::cout << "CGE::CREATION::FAILED::INVALID_BUFFER_SIZE\n";
 				return 0;
 			}
-			SetConsoleTitle(title.c_str());
+			SetConsoleTitleA(title.c_str());
 			SetConsoleScreenBufferSize(handle, {(short) width, (short) height});
 			SMALL_RECT window_size = {0, 0, (short) width - 1, (short) height - 1};
 			if(!SetConsoleWindowInfo(handle, true, &window_size)) return 0;
@@ -137,7 +138,7 @@ namespace CGE
 			GetConsoleCursorInfo(handle, &cursor_info);
 			cursor_info.bVisible = false;
 			SetConsoleCursorInfo(handle, &cursor_info);
-			screen = new wchar_t[width * height];
+			screen = new char[width * height];
 			Clear();
 			return 1;
 		}
@@ -146,13 +147,13 @@ namespace CGE
 			for(int i = 0; i < width * height; i++)
 				screen[i] = clear_char;
 		}
-		void SetClearCharacter(wchar_t character)
+		void SetClearCharacter(char character)
 		{
 			clear_char = character;
 		}
 		void Display()
 		{
-			WriteConsoleOutputCharacter(handle, screen, width * height, {0, 0}, &bytes);
+			WriteConsoleOutputCharacterA(handle, screen, width * height, {0,0}, &bytes);
 		}
 		void Draw(Character character)
 		{
@@ -165,10 +166,10 @@ namespace CGE
 			return 0x8000 & GetAsyncKeyState(i);
 		}
 	private:
-		wchar_t clear_char;
-		std::wstring title;
+		char clear_char;
+		std::string title;
 		int width, height;
-		wchar_t* screen;
+		char* screen;
 		HANDLE handle;
 		DWORD bytes;
 	};

@@ -64,7 +64,7 @@ private:
 
 int main()
 {
-	CGE::Console console(SCREEN_WIDTH, SCREEN_HEIGHT, L"Dodge");
+	CGE::Console console(SCREEN_WIDTH, SCREEN_HEIGHT, "Dodge");
 	//INIT
 	CGE::Character gameover_text("GAMEOVER!");
 	gameover_text.pos = CGE::Vec2(SCREEN_WIDTH / 2 - gameover_text.character.length() / 2, SCREEN_HEIGHT / 2);
