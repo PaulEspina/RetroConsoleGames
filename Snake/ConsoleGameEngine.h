@@ -157,7 +157,6 @@ namespace CGE
 		}
 		void Draw(Character character)
 		{
-			
 			for(unsigned int i = 0; i < character.character.length(); i++)
 				screen[character.pos.x + i + width * character.pos.y] = character.character[i];
 		}
