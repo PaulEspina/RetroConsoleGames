@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dodger", "Dodger\Dodger.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Snake", "Snake\Snake.vcxproj", "{E171DF83-10CE-4AF5-B472-D90A6B4C74C6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hangman", "Hangman\Hangman.vcxproj", "{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{E171DF83-10CE-4AF5-B472-D90A6B4C74C6}.Release|x64.Build.0 = Release|x64
 		{E171DF83-10CE-4AF5-B472-D90A6B4C74C6}.Release|x86.ActiveCfg = Release|Win32
 		{E171DF83-10CE-4AF5-B472-D90A6B4C74C6}.Release|x86.Build.0 = Release|Win32
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Debug|x64.ActiveCfg = Debug|x64
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Debug|x64.Build.0 = Debug|x64
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Debug|x86.ActiveCfg = Debug|Win32
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Debug|x86.Build.0 = Debug|Win32
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Release|x64.ActiveCfg = Release|x64
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Release|x64.Build.0 = Release|x64
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Release|x86.ActiveCfg = Release|Win32
+		{EC7313AF-AA5D-4011-918D-F59F89B5DF2E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
